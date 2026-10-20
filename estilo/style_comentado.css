@@ -1,0 +1,204 @@
+@charset "UTF-8"; /* Define a codificação de caracteres do arquivo para aceitar acentos e símbolos */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cabin:ital,wght@0,400..700;1,400..700&family=Kaushan+Script&display=swap'); /* Importa fontes externas do Google Fonts */
+
+@font-face { /* Inicia a declaração para carregar uma fonte personalizada local */
+    font-family: 'Android'; /* Nome que você escolhe para dar à fonte personalizada */
+    src: url('../fontes/idroid.otf'); /* Caminho onde o arquivo da fonte está salvo no seu computador */
+    font-weight: normal; /* Define o peso padrão (normal/negrito) da fonte */
+    font-style: normal; /* Define o estilo padrão (normal/itálico) da fonte */
+} /* Fim da declaração da fonte personalizada */
+
+:root { /* Seletor raiz para criar variáveis globais que serão reutilizadas no código */
+    --cor0: #c5ebd6; /* Cria a variável de cor 0 (verde claro) */
+    --cor1: #83e1ad; /* Cria a variável de cor 1 */
+    --cor2: #3ddc84; /* Cria a variável de cor 2 */
+    --cor3: #2fa886; /* Cria a variável de cor 3 */
+    --cor4: #1a5c67; /* Cria a variável de cor 4 */
+    --cor5: #063d1e; /* Cria a variável de cor 5 (verde escuro) */
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif; /* Cria variável para a fonte padrão do site */
+    --fonte-destaque: "Bebas Neue", sans-serif; /* Cria variável para a fonte de destaque */
+    --font-android: "Android", sans-serif; /* Cria variável para a fonte Android */
+} /* Fim das variáveis globais */
+
+* { /* OBS: O correto universal é '*', mas aqui zera margens e preenchimentos */
+    margin: 0px; /* Zera a margem externa de todos os elementos */
+    padding:0px; /* Zera o espaçamento interno de todos os elementos */
+} /* Fim do seletor global */
+
+body { /* Estiliza o corpo principal da página inteira */
+    background-color: var(--cor0); /* Define a cor de fundo usando a variável --cor0 */
+    font-family: var(--fonte-padrao); /* Aplica a fonte padrão definida nas variáveis */
+} /* Fim do estilo do body */
+
+a.externo::after { /* Adiciona um conteúdo automático logo após links com a classe 'externo' */
+    content: '\00A0\1F517'; /* Insere um espaço e o ícone de link/corrente (🔗) */
+} /* Fim da regra do link externo */
+
+header { /* Estiliza o cabeçalho superior do site */
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5)); /* Cria um degradê vertical de cima para baixo */
+    background-color: var(--cor4); /* Cor de fundo de segurança caso o gradiente não carregue */
+    min-height: 150px; /* Define a altura mínima do cabeçalho */
+    text-align: center; /* Centraliza o texto horizontalmente dentro do cabeçalho */
+    padding-top: 40px; /* Adiciona um espaço interno na parte superior do cabeçalho */
+} /* Fim do estilo do header */
+
+header > h1 { /* Estiliza o título principal (H1) que está dentro do header */
+    color: white; /* Deixa o texto do título na cor branca */
+    font-family: var(--fonte-destaque); /* Aplica a fonte de destaque nas letras */
+    font-weight: normal; /* Define o peso da fonte como normal */
+    margin-bottom: 20px; /* Cria um espaço livre abaixo do título */
+    text-shadow: 5px 10px 0px rgba(0, 0, 0, 0.267);    /* Adiciona uma sombra deslocada e sombreada no texto */
+} /* Fim do estilo do H1 do header */
+
+header > p { /* Estiliza o parágrafo de texto que está dentro do header */
+    font-family: var(--fonte-padrao); /* Aplica a fonte padrão */
+    font-size: 1.2em; /* Aumenta o tamanho da fonte em 20% em relação ao padrão */
+    color: white; /* Deixa o texto do parágrafo branco */
+    max-width: 600px; /* Limita a largura máxima do texto para facilitar a leitura */
+    padding-right: 10px; /* Adiciona respiro interno à direita */
+    padding-left: 10px; /* Adiciona respiro interno à esquerda */
+    margin: auto; /* Centraliza o parágrafo horizontalmente */
+    margin-bottom: 20px; /* Cria um espaço livre abaixo do parágrafo */
+    text-shadow: 5px 10px 0px rgba(0, 0, 0, 0.267); /* Adiciona sombra no texto do parágrafo */
+} /* Fim do estilo do parágrafo do header */
+
+nav { /* Estiliza a barra de navegação/menu do site */
+    background-color: var(--cor5); /* Aplica a cor verde escura de fundo */
+    padding: 10px; /* Adiciona espaçamento interno em todas as direções */
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.322); /* Coloca uma sombra projetada abaixo do menu */
+} /* Fim do estilo do nav */
+
+nav > a { /* Estiliza os links individuais que ficam dentro do menu */
+    color: var(--cor1); /* Define a cor do texto dos links do menu */
+    padding: 10px; /* Adiciona espaçamento interno ao redor do texto do link */
+    border-radius: 5px; /* Arredonda levemente as bordas dos links ao passar o mouse */
+    text-decoration: none; /* Remove o sublinhado padrão dos links */
+    font-weight: bold; /* Deixa o texto dos links em negrito */
+    transition-duration: 0.5s; /* Define o tempo de animação suave (meio segundo) */
+} /* Fim do estilo dos links do nav */
+
+nav > a:hover { /* Efeito acionado quando o mouse passa por cima dos links do menu */
+    background-color:var(--cor3); /* Altera a cor de fundo do link */
+    color:var(--cor5) /* Altera a cor do texto para destacar */
+} /* Fim do efeito hover do nav */
+
+main { /* Estiliza a caixa principal de conteúdo central da página */
+    min-width: 300px; /* Garante a largura mínima de 300px em celulares pequenos */
+    max-width: 1000px; /* Trava a largura máxima em 1000px para monitores grandes/TVs */
+    margin: auto; /* Centraliza a caixa principal perfeitamente na tela */
+    background-color: white; /* Deixa o fundo do conteúdo principal branco */
+    padding: 20px; /* Adiciona espaçamento interno em toda a volta */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.507); /* Cria uma sombra suave ao redor da caixa */
+    border-bottom-left-radius: 10px; /* Arredonda o canto inferior esquerdo */
+    border-bottom-right-radius: 10px; /* Arredonda o canto inferior direito */
+} /* Fim do estilo da tag main */
+
+main h1 { /* Estiliza os títulos H1 de dentro da área principal */
+    font-family: var(--font-android); /* Aplica a fonte personalizada do Android */
+    color: var(--cor5); /* Define a cor verde escura */
+    font-weight: normal; /* Define o peso normal da fonte */
+    font-size: 1.8em; /* Define o tamanho da fonte proporcionalmente maior */
+} /* Fim do estilo do H1 do main */
+
+main h2 { /* Estiliza os títulos H2 de dentro da área principal */
+    font-family: var(--font-android); /* Aplica a fonte do Android */
+    color: var(--cor4); /* Define a cor verde intermediária */
+    font-size: 1.3em; /* Define o tamanho da fonte */
+    font-weight: normal; /* Deixa o peso normal */
+    background-image: linear-gradient(to right, var(--cor1), transparent); /* Cria uma barra colorida degradê no fundo do título */
+    text-indent: 8px; /* Dá um leve recuo interno à esquerda no texto do título */
+} /* Fim do estilo do H2 do main */
+
+main p { /* Estiliza todos os parágrafos de texto dentro da área principal */
+    margin: 15px 0px; /* Cria margem vertical acima e abaixo dos parágrafos */
+    text-align: justify; /* Justifica as margens do texto para ficarem alinhadas */
+    text-indent: 30px; /* Dá um recuo (espaço de parágrafo) na primeira linha */
+    font-size: 1.1em; /* Ajusta o tamanho da fonte para leitura confortável */
+    line-height: 1.5em; /* Aumenta o espaçamento vertical entre as linhas do texto */
+} /* Fim do estilo de parágrafos do main */
+
+main strong { /* Estiliza palavras em negrito (<strong>) dentro do conteúdo principal */
+    color: var(--cor5); /* Pinta o texto em negrito com tom escuro */
+    font-weight: bold; /* Garante que o texto fique em negrito forte */
+} /* Fim do estilo de texto forte */
+
+main a { /* Estiliza links normais que ficam dentro do texto do conteúdo */
+    text-decoration: none; /* Remove o sublinhado padrão */
+    font-weight: bold; /* Deixa o texto do link em negrito */
+    color: var(--cor5); /* Define a cor do texto do link */
+    background-color: var(--cor1); /* Coloca uma cor de destaque no fundo do link */
+    padding: 2px 6px; /* Adiciona um pequeno respiro interno ao redor do link */
+} /* Fim do estilo de links do main */
+
+main a:hover { /* Efeito de mouse sobre os links do conteúdo principal */
+    text-decoration: underline; /* Faz o sublinhado aparecer ao passar o mouse */
+    color: var(--cor3); /* Muda a cor do texto do link */
+} /* Fim do efeito hover de links do main */
+
+main img { /* Estiliza todas as imagens normais dentro do conteúdo */
+    width: 100%; /* Faz a imagem ocupar 100% da largura disponível */
+} /* Fim do estilo de imagens gerais */
+
+main img.pequena { /* Estiliza especificamente imagens com a classe 'pequena' */
+    max-width: 350px; /* Limita a largura máxima da imagem a 350px */
+    display: block; /* Transforma a imagem em bloco para aceitar centralização */
+    margin: auto; /* Centraliza a imagem na tela */
+} /* Fim do estilo de imagens pequenas */
+
+div.video { /* Estiliza a caixa contenedora de vídeos dentro do conteúdo */
+    background-color: var(--cor5); /* Define fundo escuro para a moldura do vídeo */
+    margin: 0px -20px 30px -20px; /* Expande a caixa para as bordas ultrapassarem o padding do main */
+    padding: 20px; /* Adiciona margem interna na caixa do vídeo */
+    padding-bottom: 50%; /* Técnica avançada para manter a proporção responsiva da altura do vídeo */
+    position: relative; /* Define posicionamento relativo para conter elementos absolutos dentro */
+} /* Fim do estilo da div de vídeo */
+
+div.video > iframe { /* Estiliza o player de vídeo incorporado (iframe) */
+    position: absolute; /* Posiciona o vídeo de forma absoluta dentro da caixa relativa */
+    top: 5%; /* Distância de 5% a partir do topo */
+    left: 5%; /* Distância de 5% a partir da esquerda */
+    width: 90%; /* Ocupa 90% da largura da caixa */
+    height: 90%; /* Ocupa 90% da altura da caixa */
+} /* Fim do estilo do iframe de vídeo */
+
+aside { /* Estiliza caixas de barra lateral / curiosidades (aside) */
+    background-color: var(--cor1); /* Define cor de fundo verde clara */
+    padding: 10px; /* Adiciona espaçamento interno */
+    border-radius: 10px; /* Arredonda as bordas da caixa lateral */
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.288); /* Cria uma sombra projetada na lateral/baixo */
+} /* Fim do estilo do aside */
+
+aside h3 { /* Estiliza o título (H3) que fica dentro da barra lateral */
+    background-color: var(--cor4); /* Define cor de fundo escura para o título do aside */
+    color: white; /* Deixa o texto do título branco */
+    padding: 10px; /* Espaçamento interno do título */
+    margin: -10px -10px 0px -10px; /* Estica o título para encostar nas bordas arredondadas superiores da caixa */
+    border-radius: 10px 10px 0px 0px; /* Arredonda apenas os cantos superiores do título */
+} /* Fim do estilo do H3 do aside */
+
+aside > ul { /* Estiliza listas de itens (ul) dentro do aside */
+    list-style-type: '\2714\00A0\00A0'; /* Substitui os marcadores de lista tradicionais por um ícone de visto (✔) */
+    list-style-position: inside; /* Posiciona os marcadores para dentro do bloco de texto */
+    columns: 2; /* Divide os itens da lista em duas colunas automáticas */
+} /* Fim do estilo da lista do aside */
+
+footer { /* Estiliza o rodapé inferior do site */
+    background-color: var(--cor5); /* Define a cor de fundo verde escura */
+    color: white; /* Deixa os textos do rodapé na cor branca */
+    text-align: center; /* Centraliza o texto do rodapé */
+    font-size: 0.8em; /* Reduz levemente o tamanho da fonte */
+    padding: 5px; /* Adiciona um pequeno espaçamento interno */
+} /* Fim do estilo do footer */
+
+footer a { /* Estiliza links localizados dentro do rodapé */
+    color: white; /* Deixa o texto do link do rodapé branco */
+    font-weight: bolder; /* Deixa o negrito dos links do rodapé mais forte */
+    text-decoration: none; /* Remove o sublinhado padrão */
+} /* Fim do estilo dos links do footer */
+
+footer a:hover { /* Efeito do mouse sobre os links do rodapé */
+    text-decoration: underline; /* Faz aparecer o sublinhado ao passar o mouse */
+    color: var(--cor1); /* Altera a cor do texto do link para verde claro */
+} /* Fim do efeito hover dos links do footer */
